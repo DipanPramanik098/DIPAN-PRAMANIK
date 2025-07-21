@@ -4,353 +4,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dipan Pramanik - Full Stack Developer Portfolio</title>
-    <meta name="description"
-        content="Full Stack Developer with 5+ years of experience. Specializing in React, Node.js, Python, and cloud technologies.">
+    <title>Dipan Pramanik - Full Stack Developer</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    <!-- External Libraries -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navbar -->
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Dipan</a>
+                <span>Dipan</span><span class="accent">Pramanik</span>
             </div>
-
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#coding" class="nav-link">Coding</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#education" class="nav-link">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#coding" class="nav-link">Coding</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                        </button>
+                </li>
                 </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
-            <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
-        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-profile" data-aos="fade-right">
-                    <div class="profile-image-container">
-                        <div class="profile-image">
-                            <img src="./assets/profile-img.jpg" alt="My-image" class="profile-img" id="myImage">
-                        </div>
-                        <div class="profile-ring"></div>
-                        <div class="profile-dots"></div>
-                    </div>
-                </div>
-                <div class="hero-text" data-aos="fade-left">
-                    <p class="hero-greeting">Hello, I'm</p>
-                    <h1 class="hero-name">
-                        <span class="first-name">Dipan</span>
-                        <span class="last-name">Pramanik</span>
-                    </h1>
-                    <div class="hero-title">
-                        <span id="typed-text"></span>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h3>Hello, I'm</h3>
+                    <h1>Dipan Pramanik</h1>
+                    <div class="dynamic-text">
+                        <span>I'm a </span>
+                        <span class="typing-text" id="typing-text">Coder</span>
                         <span class="cursor">|</span>
                     </div>
-                    <p class="hero-description">
-                        Passionate Full Stack Developer with 5+ years of experience creating
-                        robust, scalable solutions using cutting-edge technologies.
-                    </p>
-                    <div class="hero-social">
-                        <div class="social-links">
-                            <a href="https://github.com/dipanpramanik" target="_blank" class="social-link"
-                                title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/dipanpramanik" target="_blank" class="social-link"
-                                title="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://twitter.com/dipanpramanik" target="_blank" class="social-link"
-                                title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://instagram.com/dipanpramanik" target="_blank" class="social-link"
-                                title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://facebook.com/dipanpramanik" target="_blank" class="social-link"
-                                title="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="social-link download-resume" title="Download Resume"
-                                onclick="downloadResume()">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
+                    <p>Passionate Full Stack Developer with 5+ years of experience in creating innovative web solutions.
+                        Specialized in modern technologies and clean, efficient code.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <h3>5+</h3>
-                            <p>Years Experience</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/dipanpramanik" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/dipanpramanik" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/dipanpramanik" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/dipanpramanik" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link resume-download" onclick="downloadResume()">
+                            <i class="fas fa-download"></i>
+                        </a>
                         </div>
-                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                            <h3>50+</h3>
-                            <p>Projects Completed</p>
                         </div>
-                        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                            <h3>100+</h3>
-                            <p>Satisfied Clients</p>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <div class="image-container">
+                            <svg viewBox="0 0 200 200" class="profile-svg">
+                                <circle cx="100" cy="100" r="90" fill="var(--primary-color)" opacity="0.1" />
+                                <circle cx="100" cy="50" r="30" fill="var(--primary-color)" opacity="0.8" />
+                                <ellipse cx="100" cy="140" rx="40" ry="50" fill="var(--primary-color)" opacity="0.8" />
+                            </svg>
                         </div>
-                    </div>
-                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
-                        <a href="#contact" class="cta-button primary">Get In Touch</a>
-                        <a href="#projects" class="cta-button secondary">View Projects</a>
+                        <div class="floating-elements">
+                            <div class="floating-icon" style="--delay: 0s">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 2s">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 4s">
+                                <i class="fab fa-python"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section with Swiper -->
-    <section class="skills" id="skills">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Skills & Expertise</h2>
-                <p>Passionate about creating robust, scalable solutions using cutting-edge technologies</p>
+            <div class="section-header">
+                <h2>My Skills</h2>
+                <p>Technologies I work with</p>
             </div>
-    
-            <div class="swiper skills-swiper" data-aos="fade-up">
+            <div class="swiper skills-swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skills-grid">
-                            <!-- Repeat skill-item as before -->
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-react"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">React.js</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="95%"></div>
-                                    </div>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Next.js</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="90%"></div>
-                                    </div>
-                                    <span class="skill-percentage">90%</span>
+                            <h3>Frontend Development</h3>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-progress="95"></div>
+                                <span class="progress-text">95%</span>
                                 </div>
+                            <ul class="skill-list">
+                                <li>React.js</li>
+                                <li>Vue.js</li>
+                                <li>JavaScript</li>
+                                <li>TypeScript</li>
+                            </ul>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">TypeScript</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="88%"></div>
-                                    </div>
-                                    <span class="skill-percentage">88%</span>
+                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Backend Development</h3>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-progress="90"></div>
+                                <span class="progress-text">90%</span>
                                 </div>
+                            <ul class="skill-list">
+                                <li>Node.js</li>
+                                <li>Python</li>
+                                <li>Django</li>
+                                <li>Express.js</li>
+                            </ul>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-vuejs"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Vue.js</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="80%"></div>
-                                    </div>
-                                    <span class="skill-percentage">80%</span>
+                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>Database</h3>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-progress="85"></div>
+                                <span class="progress-text">85%</span>
                                 </div>
+                            <ul class="skill-list">
+                                <li>MongoDB</li>
+                                <li>PostgreSQL</li>
+                                <li>MySQL</li>
+                                <li>Redis</li>
+                            </ul>
                             </div>
-                        </div>
-                    </div>
-    
-                    <div class="swiper-slide skill-category">
-                        <h3>Backend</h3>
-                        <div class="skills-grid">
-                            <!-- Backend skill items -->
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-node-js"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Node.js</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="90%"></div>
-                                    </div>
-                                    <span class="skill-percentage">90%</span>
+                            </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloud & DevOps</h3>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-progress="80"></div>
+                                <span class="progress-text">80%</span>
                                 </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-python"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Python</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="82%"></div>
-                                    </div>
-                                    <span class="skill-percentage">82%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fas fa-server"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Express.js</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="88%"></div>
-                                    </div>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fas fa-code"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Django</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="82%"></div>
-                                    </div>
-                                    <span class="skill-percentage">82%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="swiper-slide skill-category">
-                        <h3>Database & Cloud</h3>
-                        <div class="skills-grid">
-                            <!-- Database skill items -->
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fas fa-database"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">PostgreSQL</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="85%"></div>
-                                    </div>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fas fa-leaf"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">MongoDB</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="85%"></div>
-                                    </div>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">AWS</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="80%"></div>
-                                    </div>
-                                    <span class="skill-percentage">80%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Docker</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="78%"></div>
-                                    </div>
-                                    <span class="skill-percentage">78%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide skill-category">
-                        <h3>Database & Cloud</h3>
-                        <div class="skills-grid">
-                            <!-- Database skill items -->
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fas fa-database"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">PostgreSQL</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="85%"></div>
-                                    </div>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fas fa-leaf"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">MongoDB</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="85%"></div>
-                                    </div>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">AWS</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="80%"></div>
-                                    </div>
-                                    <span class="skill-percentage">80%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                                <div class="skill-info">
-                                    <span class="skill-name">Docker</span>
-                                    <div class="skill-progress">
-                                        <div class="progress-bar" data-width="78%"></div>
-                                    </div>
-                                    <span class="skill-percentage">78%</span>
-                                </div>
-                            </div>
+                            <ul class="skill-list">
+                                <li>AWS</li>
+                                <li>Docker</li>
+                                <li>Kubernetes</li>
+                                <li>CI/CD</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -359,564 +206,347 @@
         </div>
     </section>
 
-
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Services I Offer</h2>
-                <p>Transform your ideas into powerful digital solutions with comprehensive development services</p>
+            <div class="section-header">
+                <h2>My Services</h2>
+                <p>What I can do for you</p>
             </div>
-
-            <div class="services-slider-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="swiper services-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="service-card">
-                                <div class="service-icon">
-                                    <i class="fas fa-code"></i>
+            <div class="swiper services-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
                                 </div>
                                 <h3>Web Development</h3>
-                                <p>Creating responsive, modern web applications using React, Next.js, and TypeScript
-                                    with optimal performance.</p>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> React/Next.js</li>
-                                    <li><i class="fas fa-check"></i> TypeScript</li>
-                                    <li><i class="fas fa-check"></i> Responsive Design</li>
-                                    <li><i class="fas fa-check"></i> SEO Optimization</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service-card">
-                                <div class="service-icon">
-                                    <i class="fas fa-mobile-alt"></i>
-                                </div>
-                                <h3>Mobile Development</h3>
-                                <p>Building cross-platform mobile apps with React Native and Flutter for iOS and Android
-                                    platforms.</p>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> React Native</li>
-                                    <li><i class="fas fa-check"></i> Flutter</li>
-                                    <li><i class="fas fa-check"></i> iOS & Android</li>
-                                    <li><i class="fas fa-check"></i> App Store Deploy</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service-card">
-                                <div class="service-icon">
-                                    <i class="fas fa-server"></i>
-                                </div>
-                                <h3>Backend Development</h3>
-                                <p>Developing robust APIs and server-side applications with Node.js, PostgreSQL, and
-                                    cloud services.</p>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Node.js/Express</li>
-                                    <li><i class="fas fa-check"></i> PostgreSQL/MongoDB</li>
-                                    <li><i class="fas fa-check"></i> RESTful APIs</li>
-                                    <li><i class="fas fa-check"></i> Authentication</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service-card">
-                                <div class="service-icon">
-                                    <i class="fas fa-cloud"></i>
-                                </div>
-                                <h3>Cloud & DevOps</h3>
-                                <p>Deploying and scaling applications using AWS, Docker, and implementing CI/CD
-                                    pipelines.</p>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> AWS/Azure</li>
-                                    <li><i class="fas fa-check"></i> Docker</li>
-                                    <li><i class="fas fa-check"></i> CI/CD</li>
-                                    <li><i class="fas fa-check"></i> Monitoring</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service-card">
-                                <div class="service-icon">
-                                    <i class="fas fa-paint-brush"></i>
-                                </div>
-                                <h3>UI/UX Design</h3>
-                                <p>Designing intuitive user interfaces and experiences with Figma, focusing on
-                                    user-centric design.</p>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Figma/Sketch</li>
-                                    <li><i class="fas fa-check"></i> Prototyping</li>
-                                    <li><i class="fas fa-check"></i> User Research</li>
-                                    <li><i class="fas fa-check"></i> Design Systems</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service-card">
-                                <div class="service-icon">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <h3>Technical Consulting</h3>
-                                <p>Providing technical guidance, code reviews, and architecture decisions for your
-                                    projects.</p>
-                                <ul class="service-features">
-                                    <li><i class="fas fa-check"></i> Code Review</li>
-                                    <li><i class="fas fa-check"></i> Architecture</li>
-                                    <li><i class="fas fa-check"></i> Best Practices</li>
-                                    <li><i class="fas fa-check"></i> Team Mentoring</li>
-                                </ul>
+                            <p>Creating responsive and modern web applications using latest technologies and frameworks.
+                            </p>
+                            <div class="service-features">
+                                <span>Responsive Design</span>
+                                <span>Modern UI/UX</span>
+                                <span>Performance Optimized</span>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-
-            <div class="services-cta" data-aos="fade-up" data-aos-delay="400">
-                <h3>Ready to start your project?</h3>
-                <a href="#contact" class="cta-button primary">Let's Work Together</a>
-            </div>
-        </div>
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile Development</h3>
+                            <p>Building cross-platform mobile applications for iOS and Android with native performance.
+                            </p>
+                            <div class="service-features">
+                                <span>Cross-platform</span>
+                                <span>Native Performance</span>
+                                <span>User-friendly</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                                </div>
+                            <h3>Technical Consulting</h3>
+                            <p>Providing expert advice on technology choices, architecture design, and optimization
+                                strategies.</p>
+                            <div class="service-features">
+                                <span>Architecture Design</span>
+                                <span>Code Review</span>
+                                <span>Performance Audit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-cogs"></i>
+                                </div>
+                            <h3>API Development</h3>
+                            <p>Designing and developing robust RESTful APIs and microservices for scalable applications.
+                            </p>
+                            <div class="service-features">
+                                <span>RESTful APIs</span>
+                                <span>Microservices</span>
+                                <span>Documentation</span>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            </div>
+                            </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Featured Projects</h2>
-                <p>A showcase of innovative solutions I've built using cutting-edge technologies</p>
+                <p>My recent work</p>
             </div>
-
-            <div class="projects-slider-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="swiper projects-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <div class="project-preview">
-                                        <div class="project-icon">
-                                            <i class="fas fa-tasks"></i>
-                                        </div>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-actions">
-                                            <a href="#" class="project-btn primary">Live Demo</a>
-                                            <a href="#" class="project-btn secondary">View Code</a>
-                                        </div>
-                                    </div>
+            <div class="swiper projects-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <svg viewBox="0 0 300 200" class="project-svg">
+                                    <rect width="300" height="200" fill="var(--primary-color)" opacity="0.1" />
+                                    <rect x="20" y="40" width="260" height="120" fill="var(--primary-color)" opacity="0.3" rx="8" />
+                                    <circle cx="60" cy="80" r="15" fill="var(--accent-color)" />
+                                    <rect x="90" y="70" width="150" height="8" fill="var(--text-color)" opacity="0.7" rx="4" />
+                                    <rect x="90" y="85" width="100" height="6" fill="var(--text-color)" opacity="0.5" rx="3" />
+                                </svg>
                                 </div>
                                 <div class="project-content">
-                                    <div class="project-badge">Featured</div>
-                                    <h3>Task Management App</h3>
-                                    <p>Collaborative project management tool with real-time updates, team collaboration
-                                        features, and advanced project analytics dashboard</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Next.js</span>
-                                        <span class="tech-tag">Socket.io</span>
-                                        <span class="tech-tag">PostgreSQL</span>
-                                        <span class="tech-tag">Redis</span>
+                                <h3>E-Commerce Platform</h3>
+                                <p>A full-stack e-commerce solution with React, Node.js, and MongoDB</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
                                     </div>
-                                    <div class="project-stats">
-                                        <div class="stat">
-                                            <i class="fas fa-clock"></i>
-                                            <span>2 months</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-users"></i>
-                                            <span>3 members</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
+                                <div class="project-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <div class="project-preview">
-                                        <div class="project-icon">
-                                            <i class="fas fa-share-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-actions">
-                                            <a href="#" class="project-btn primary">Live Demo</a>
-                                            <a href="#" class="project-btn secondary">View Code</a>
-                                        </div>
-                                    </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-sm">Live Demo</a>
+                                    <a href="#" class="btn btn-outline btn-sm">Source Code</a>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <svg viewBox="0 0 300 200" class="project-svg">
+                                    <rect width="300" height="200" fill="var(--accent-color)" opacity="0.1" />
+                                    <rect x="20" y="40" width="260" height="120" fill="var(--accent-color)" opacity="0.3" rx="8" />
+                                    <rect x="40" y="60" width="80" height="80" fill="var(--primary-color)" opacity="0.7" rx="4" />
+                                    <rect x="140" y="60" width="120" height="20" fill="var(--text-color)" opacity="0.7" rx="4" />
+                                    <rect x="140" y="90" width="100" height="15" fill="var(--text-color)" opacity="0.5" rx="3" />
+                                    <rect x="140" y="110" width="80" height="15" fill="var(--text-color)" opacity="0.5" rx="3" />
+                                </svg>
                                 </div>
                                 <div class="project-content">
-                                    <div class="project-badge">Featured</div>
-                                    <h3>Social Media App</h3>
-                                    <p>Mobile-first social platform with media sharing, real-time messaging, and
-                                        advanced content discovery algorithms</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">React Native</span>
-                                        <span class="tech-tag">Redux</span>
-                                        <span class="tech-tag">Firebase</span>
-                                        <span class="tech-tag">AWS</span>
+                                <h3>Task Management App</h3>
+                                <p>A productivity app built with Vue.js and Firebase for real-time collaboration</p>
+                                <div class="project-tech">
+                                    <span>Vue.js</span>
+                                    <span>Firebase</span>
+                                    <span>Vuex</span>
                                     </div>
-                                    <div class="project-stats">
-                                        <div class="stat">
-                                            <i class="fas fa-clock"></i>
-                                            <span>4 months</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-users"></i>
-                                            <span>5 members</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.7</span>
-                                        </div>
+                                <div class="project-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
                                     </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-sm">Live Demo</a>
+                                    <a href="#" class="btn btn-outline btn-sm">Source Code</a>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <div class="project-preview">
-                                        <div class="project-icon">
-                                            <i class="fas fa-tasks"></i>
-                                        </div>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-actions">
-                                            <a href="#" class="project-btn primary">Live Demo</a>
-                                            <a href="#" class="project-btn secondary">View Code</a>
-                                        </div>
-                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <svg viewBox="0 0 300 200" class="project-svg">
+                                    <rect width="300" height="200" fill="#28a745" opacity="0.1" />
+                                    <circle cx="150" cy="100" r="60" fill="#28a745" opacity="0.3" />
+                                    <path d="M120 100 L140 120 L180 80" stroke="var(--bg-color)" stroke-width="4" fill="none" />
+                                    <rect x="50" y="160" width="200" height="8" fill="var(--text-color)" opacity="0.3" rx="4" />
+                                </svg>
                                 </div>
                                 <div class="project-content">
-                                    <div class="project-badge">Featured</div>
-                                    <h3>Task Management App</h3>
-                                    <p>Collaborative project management tool with real-time updates, team collaboration
-                                        features, and advanced project analytics dashboard</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Next.js</span>
-                                        <span class="tech-tag">Socket.io</span>
-                                        <span class="tech-tag">PostgreSQL</span>
-                                        <span class="tech-tag">Redis</span>
+                                <h3>Analytics Dashboard</h3>
+                                <p>Real-time analytics dashboard with Python Django and Chart.js visualizations</p>
+                                <div class="project-tech">
+                                    <span>Django</span>
+                                    <span>Chart.js</span>
+                                    <span>PostgreSQL</span>
                                     </div>
-                                    <div class="project-stats">
-                                        <div class="stat">
-                                            <i class="fas fa-clock"></i>
-                                            <span>2 months</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-users"></i>
-                                            <span>3 members</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
+                                <div class="project-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                     </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-sm">Live Demo</a>
+                                    <a href="#" class="btn btn-outline btn-sm">Source Code</a>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <div class="project-preview">
-                                        <div class="project-icon">
-                                            <i class="fas fa-chart-line"></i>
-                                        </div>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-actions">
-                                            <a href="#" class="project-btn primary">Live Demo</a>
-                                            <a href="#" class="project-btn secondary">View Code</a>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="project-content">
-                                    <div class="project-badge">Featured</div>
-                                    <h3>AI-Powered Dashboard</h3>
-                                    <p>Analytics dashboard with machine learning insights, predictive analytics, and
-                                        automated reporting for business intelligence</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Vue.js</span>
-                                        <span class="tech-tag">Python</span>
-                                        <span class="tech-tag">TensorFlow</span>
-                                        <span class="tech-tag">D3.js</span>
-                                    </div>
-                                    <div class="project-stats">
-                                        <div class="stat">
-                                            <i class="fas fa-clock"></i>
-                                            <span>5 months</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-users"></i>
-                                            <span>6 members</span>
-                                        </div>
-                                        <div class="stat">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.6</span>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next projects-swiper-button-next">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="swiper-button-prev projects-swiper-button-prev">
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                </div>
+                                </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Coding Profile Section -->
-    <section class="coding" id="coding">
+    <!-- Coding Profiles Section -->
+    <section id="coding" class="coding">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Coding Profiles</h2>
-                <p>My journey across competitive programming and development platforms</p>
+                <p>My competitive programming journey</p>
             </div>
-
-            <div class="coding-slider-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="swiper coding-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="https://github.com/dipanpramanik" target="_blank" class="coding-card-link">
-                                <div class="coding-card">
-                                    <div class="coding-header">
-                                        <div class="platform-icon">
-                                            <i class="fab fa-github"></i>
-                                        </div>
-                                        <div class="platform-info">
-                                            <h3>GitHub</h3>
-                                            <p>@dipanpramanik</p>
-                                        </div>
-                                    </div>
-                                    <div class="coding-stats">
-                                        <div class="stat-item">
-                                            <div class="stat-number">120+</div>
-                                            <div class="stat-label">Repositories</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">500+</div>
-                                            <div class="stat-label">Stars</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">1.2K+</div>
-                                            <div class="stat-label">Contributions</div>
-                                        </div>
-                                    </div>
-                                    <div class="coding-badge">
-                                        <span class="badge active">Active Contributor</span>
-                                    </div>
+            <div class="swiper coding-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="coding-card">
+                            <div class="coding-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>LeetCode</h3>
+                            <div class="coding-stats">
+                                <div class="stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Problems Solved</span>
                                 </div>
+                                <div class="stat">
+                                    <span class="stat-number">1800+</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                                </div>
+                            <a href="https://leetcode.com/dipanpramanik" class="profile-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Profile
                             </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://leetcode.com/u/dipanpramanik" target="_blank" class="coding-card-link">
-                                <div class="coding-card">
-                                    <div class="coding-header">
-                                        <div class="platform-icon leetcode">
-                                            <i class="fas fa-code"></i>
-                                        </div>
-                                        <div class="platform-info">
-                                            <h3>LeetCode</h3>
-                                            <p>@dipanpramanik</p>
-                                        </div>
-                                    </div>
-                                    <div class="coding-stats">
-                                        <div class="stat-item">
-                                            <div class="stat-number">450+</div>
-                                            <div class="stat-label">Problems Solved</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">1850</div>
-                                            <div class="stat-label">Rating</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">85%</div>
-                                            <div class="stat-label">Success Rate</div>
-                                        </div>
-                                    </div>
-                                    <div class="coding-badge">
-                                        <span class="badge expert">Expert</span>
-                                    </div>
+                            </div>
+                            </div>
+                    <div class="swiper-slide">
+                        <div class="coding-card">
+                            <div class="coding-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <div class="coding-stats">
+                                <div class="stat">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label">Repositories</span>
                                 </div>
+                                <div class="stat">
+                                    <span class="stat-number">1000+</span>
+                                    <span class="stat-label">Contributions</span>
+                                </div>
+                                </div>
+                            <a href="https://github.com/dipanpramanik" class="profile-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Profile
                             </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://www.codechef.com/users/dipanpramanik" target="_blank"
-                                class="coding-card-link">
-                                <div class="coding-card">
-                                    <div class="coding-header">
-                                        <div class="platform-icon codechef">
-                                            <i class="fas fa-trophy"></i>
-                                        </div>
-                                        <div class="platform-info">
-                                            <h3>CodeChef</h3>
-                                            <p>@dipanpramanik</p>
-                                        </div>
-                                    </div>
-                                    <div class="coding-stats">
-                                        <div class="stat-item">
-                                            <div class="stat-number">4★</div>
-                                            <div class="stat-label">Star Rating</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">1920</div>
-                                            <div class="stat-label">Max Rating</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">Top 5%</div>
-                                            <div class="stat-label">Global Rank</div>
-                                        </div>
-                                    </div>
-                                    <div class="coding-badge">
-                                        <span class="badge star">4 Star</span>
-                                    </div>
+                            </div>
+                            </div>
+                    <div class="swiper-slide">
+                        <div class="coding-card">
+                            <div class="coding-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3>CodeChef</h3>
+                            <div class="coding-stats">
+                                <div class="stat">
+                                    <span class="stat-number">4 ⭐</span>
+                                    <span class="stat-label">Rating</span>
                                 </div>
+                                <div class="stat">
+                                    <span class="stat-number">200+</span>
+                                    <span class="stat-label">Problems</span>
+                                </div>
+                                </div>
+                            <a href="https://codechef.com/users/dipanpramanik" class="profile-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Profile
                             </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://www.hackerrank.com/profile/dipanpramanik" target="_blank"
-                                class="coding-card-link">
-                                <div class="coding-card">
-                                    <div class="coding-header">
-                                        <div class="platform-icon hackerrank">
-                                            <i class="fas fa-code-branch"></i>
-                                        </div>
-                                        <div class="platform-info">
-                                            <h3>HackerRank</h3>
-                                            <p>@dipanpramanik</p>
-                                        </div>
-                                    </div>
-                                    <div class="coding-stats">
-                                        <div class="stat-item">
-                                            <div class="stat-number">Gold</div>
-                                            <div class="stat-label">Problem Solving</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">Silver</div>
-                                            <div class="stat-label">JavaScript</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">Gold</div>
-                                            <div class="stat-label">Python</div>
-                                        </div>
-                                    </div>
-                                    <div class="coding-badge">
-                                        <a href="#" class="badge gold">View Profile</a>
-                                    </div>
+                            </div>
+                            </div>
+                    <div class="swiper-slide">
+                        <div class="coding-card">
+                            <div class="coding-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>HackerRank</h3>
+                            <div class="coding-stats">
+                                <div class="stat">
+                                    <span class="stat-number">Gold</span>
+                                    <span class="stat-label">Badge</span>
                                 </div>
+                                <div class="stat">
+                                    <span class="stat-number">5 ⭐</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                                </div>
+                            <a href="https://hackerrank.com/dipanpramanik" class="profile-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Profile
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section class="education" id="education">
+    <section id="education" class="education">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Education</h2>
-                <p>My academic journey and achievements</p>
+                <p>My academic journey</p>
             </div>
-
-            <div class="education-timeline" data-aos="fade-up" data-aos-delay="200">
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+            <div class="education-timeline">
+                <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="education-card">
-                            <div class="education-header">
-                                <div class="degree-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div class="degree-info">
-                                    <h3>B.Tech in Computer Science & Engineering</h3>
-                                    <h4>Netaji Subhash Engineering College</h4>
-                                    <span class="duration">2022 - 2026</span>
-                                </div>
+                    <div class="education-card">
+                        <div class="education-date">2018 - 2022</div>
+                        <h3>Bachelor of Technology</h3>
+                        <h4>Computer Science & Engineering</h4>
+                        <p>XYZ Institute of Technology</p>
+                        <div class="education-grade">CGPA: 8.5/10</div>
+                        <div class="education-details">
+                            <span>Data Structures</span>
+                            <span>Algorithms</span>
+                            <span>Database Systems</span>
+                            <span>Software Engineering</span>
                             </div>
-                            <div class="education-details">
-                                <div class="grade-badge completed">
-                                    <span>C.G.P.A: 7.39</span>
-                                    <small>Persuing</small>
-                                </div>
-                                <p>Specialized in software engineering, data structures, algorithms, and full-stack
-                                    development with hands-on projects in web technologies.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                            </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="education-card">
-                            <div class="education-header">
-                                <div class="degree-icon">
-                                    <i class="fas fa-school"></i>
-                                </div>
-                                <div class="degree-info">
-                                    <h3>Higher Secondary</h3>
-                                    <h4>Purba Chilka Lal Chand High School(H.S)</h4>
-                                    <span class="duration">2020 - 2022</span>
-                                </div>
+                    <div class="education-card">
+                        <div class="education-date">2016 - 2018</div>
+                        <h3>Higher Secondary</h3>
+                        <h4>Science (PCM)</h4>
+                        <p>ABC Higher Secondary School</p>
+                        <div class="education-grade">Percentage: 85%</div>
+                        <div class="education-details">
+                            <span>Mathematics</span>
+                            <span>Physics</span>
+                            <span>Chemistry</span>
+                            <span>Computer Science</span>
                             </div>
-                            <div class="education-details">
-                                <div class="grade-badge excellent">
-                                    <span>Grade: 94%</span>
-                                    <small>Science Stream</small>
-                                </div>
-                                <p>Focused on Physics, Chemistry, Mathematics, and Biology, building a strong
-                                    foundation for engineering studies.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                            </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="education-card">
-                            <div class="education-header">
-                                <div class="degree-icon">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <div class="degree-info">
-                                    <h3>Secondary</h3>
-                                    <h4>Purba Chilka Lal Chand High School(H.S)</h4>
-                                    <span class="duration">2014 - 2020</span>
-                                </div>
-                            </div>
-                            <div class="education-details">
-                                <div class="grade-badge excellent">
-                                    <span>Grade: 88%</span>
-                                    <small>Board Examination</small>
-                                </div>
-                                <p>Completed secondary education with distinction, demonstrating consistent academic
-                                    excellence across all subjects.</p>
-                            </div>
+                    <div class="education-card">
+                        <div class="education-date">2014 - 2016</div>
+                        <h3>Secondary School</h3>
+                        <h4>All Subjects</h4>
+                        <p>DEF Secondary School</p>
+                        <div class="education-grade">Percentage: 90%</div>
+                        <div class="education-details">
+                            <span>Mathematics</span>
+                            <span>Science</span>
+                            <span>English</span>
+                            <span>Social Studies</span>
                         </div>
                     </div>
                 </div>
@@ -925,195 +555,146 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Get In Touch</h2>
-                <p>Let's discuss how I can help bring your ideas to life</p>
+                <p>Let's work together on your next project</p>
             </div>
-
             <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>myselfdipan6@email.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+91 9883280905</p>
-                        </div>
-                    </div>
-
+                <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>Kolkata, India</p>
+                            <p>Kolkata, West Bengal, India</p>
                         </div>
                     </div>
-
-                    <div class="contact-social">
-                        <h4>Follow Me</h4>
-                        <div class="social-links">
-                            <a href="https://github.com/dipanpramanik" target="_blank" class="social-link" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/dipanpramanik" target="_blank" class="social-link" title="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://twitter.com/dipanpramanik" target="_blank" class="social-link" title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://instagram.com/dipanpramanik" target="_blank" class="social-link" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://facebook.com/dipanpramanik" target="_blank" class="social-link" title="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="social-link download-resume" title="Download Resume" onclick="downloadResume()">
-                                <i class="fas fa-download"></i>
-                            </a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 9876543210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>dipan@example.com</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact-form-container" data-aos="fade-left">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <label for="name">Name</label>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
-
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <label for="email">Email</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="6"
-                                required></textarea>
-                            <label for="message">Message</label>
-                        </div>
-
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loader" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i>
-                            </span>
-                        </button>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </form>
-
-                    <div class="form-message" id="form-message"></div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>Dipan Pramanik</h3>
-                        <p>Crafting digital solutions with passion and precision</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dipan Pramanik</h3>
+                <p>Full Stack Developer passionate about creating innovative web solutions and contributing to
+                    open-source projects.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/dipanpramanik" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/dipanpramanik" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/dipanpramanik" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/dipanpramanik" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
                     </div>
-                    <div class="footer-social">
-                        <a href="https://github.com/dipanpramanik" target="_blank" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/dipanpramanik" target="_blank" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/dipanpramanik" target="_blank" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/dipanpramanik" target="_blank" class="social-link" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/dipanpramanik" target="_blank" class="social-link" title="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="social-link download-resume" title="Download Resume" onclick="downloadResume()">
-                            <i class="fas fa-download"></i>
-                        </a>
                     </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#coding">Coding</a></li>
-                        <li><a href="#contact">Contact</a></li>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="#services">Mobile Development</a></li>
+                    <li><a href="#services">Technical Consulting</a></li>
+                    <li><a href="#services">API Development</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li>Web Development</li>
-                        <li>Mobile Development</li>
-                        <li>Backend Development</li>
-                        <li>UI/UX Design</li>
-                        <li>Technical Consulting</li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated with my latest projects and insights</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                    </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Kolkata, West Bengal</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> dipan@example.com</p>
                 </div>
             </div>
-
-            <div class="footer-bottom">
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
                 <p>&copy; 2025 Dipan Pramanik. All rights reserved.</p>
-                <p>Made with <i class="fas fa-heart"></i> using modern web technologies</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- External Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- Custom Scripts -->
-    <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/main.js"></script>
-
+    <!-- Success/Error Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <div class="popup-icon" id="popup-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 id="popup-title">Success!</h3>
+            <p id="popup-message">Your message has been sent successfully.</p>
+            <button class="btn btn-primary" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+    
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scroll-to-top" title="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
+    <button id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
     </button>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
