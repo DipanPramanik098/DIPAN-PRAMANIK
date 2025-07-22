@@ -11,7 +11,7 @@ const EMAILJS_CONFIG = {
 };
 
 // Dynamic text options
-const DYNAMIC_TEXTS = ['Coder', 'Developer', 'Learner', 'Problem Solver', 'Tech Enthusiast'];
+const DYNAMIC_TEXTS = ['Full Stack Web Developer', 'Machine Learning Enthusiast', 'Problem Solver', 'Tech Explorer'];
 
 // ===== Global Variables =====
 let currentTextIndex = 0;
@@ -495,36 +495,17 @@ elements.popup.addEventListener('click', (e) => {
 
 // ===== Resume Download =====
 window.downloadResume = () => {
-    // Create a dummy resume for demo purposes
-    const resumeContent = `
-        DIPAN PRAMANIK
-        Full Stack Developer
-        
-        Contact:
-        - Email: dipan@example.com
-        - Phone: +91 9876543210
-        - Location: Kolkata, West Bengal, India
-        
-        Experience: 5+ years in Full Stack Development
-        
-        Skills:
-        - Frontend: React.js, Vue.js, JavaScript, TypeScript
-        - Backend: Node.js, Python, Django, Express.js
-        - Database: MongoDB, PostgreSQL, MySQL
-        - Cloud: AWS, Docker, Kubernetes
-        
-        This is a sample resume. In a real application, 
-        you would link to an actual PDF file.
-    `;
+    // Direct download link (replace with your correct one)
+    const directDownloadLink = 'https://drive.google.com/uc?export=download&id=1QOLiTlB5onxOSLWqKz9AHKH7FB1f4_JM';
 
     const element = document.createElement('a');
-    const file = new Blob([resumeContent], { type: 'text/plain' });
-    element.href = URL.createObjectURL(file);
-    element.download = 'Dipan_Pramanik_Resume.txt';
+    element.href = directDownloadLink;
+    element.download = 'Dipan_Pramanik_Resume.pdf';
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
 };
+
 
 // ===== Scroll to Top Button =====
 const scrollToTopBtn = document.getElementById('scroll-to-top');
